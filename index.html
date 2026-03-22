@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Honey Badger Credit Solutions – Smarter Credit. Stronger Future.</title>
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"/>
+  <link rel="stylesheet" href="Styles/main.css"/>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<header id="navbar">
+  <div class="nav-container">
+
+    <a class="nav-logo" href="index.html">
+      <div class="logo-badge">
+        <img src="images/honey-logo1.png" alt="Honey Badger Credit Solutions Logo" class="logo-img"/>
+      </div>
+      <div class="logo-text-wrap">
+        <div class="logo-name">Honey Badger</div>
+        <span class="logo-sub">Credit Solutions</span>
+        <div class="logo-tagline-nav">Smarter Credit. Stronger Future.</div>
+      </div>
+    </a>
+
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero"     class="nav-link active">Home</a></li>
+        <li><a href="#about"    class="nav-link">About</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#why"      class="nav-link">Why Us</a></li>
+        <li><a href="#process"  class="nav-link">Process</a></li>
+        <li><a href="#contact"  class="nav-link nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="menu-toggle" id="menuToggle">
+      <i class='bx bx-menu'  id="iconOpen"></i>   <!-- burger -->
+      <i class='bx bx-x'     id="iconClose" style="display:none"></i>  <!-- X -->
+    </div>
+
+  </div>
+</header>
+
+<!-- ══ MOBILE MENU ══ -->
+<div class="mob-menu" id="mobMenu">
+  <a href="#hero"     onclick="closeMob()">Home</a>
+  <a href="#about"    onclick="closeMob()">About</a>
+  <a href="#services" onclick="closeMob()">Services</a>
+  <a href="#why"      onclick="closeMob()">Why Us</a>
+  <a href="#process"  onclick="closeMob()">Process</a>
+  <a href="#contact"  onclick="closeMob()">Contact</a>
+</div>
+
+
+<!-- ══ CSS — add to style.css ══ -->
+<style>
+.menu-toggle {
+  display: none;         /* hidden on desktop */
+  cursor: pointer;
+  font-size: 28px;       /* icon size */
+  color: var(--white);   /* white on hero, JS adds .scrolled to turn dark */
+  line-height: 1;
+  transition: color 0.3s;
+}
+
+/* when navbar scrolled — icon goes navy */
+#navbar.scrolled .menu-toggle { color: var(--navy); }
+
+/* show burger only on small screens */
+@media (max-width: 1050px) {
+  .menu-toggle  { display: block; }
+  .nav-links    { display: none;  }   /* hide desktop links */
+}
+</style>
+
+
+<!-- ══ JS — update menu-toggle block in main.js ══ -->
+<script>
+// Replace the existing mobile menu block in main.js with this:
+
+const menuToggle = document.getElementById('menuToggle');
+const mobMenu    = document.getElementById('mobMenu');
+const iconOpen   = document.getElementById('iconOpen');
+const iconClose  = document.getElementById('iconClose');
+
+menuToggle.addEventListener('click', () => {
+  const isOpen = mobMenu.classList.toggle('open');
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+
+  // swap burger ↔ X
+  iconOpen.style.display  = isOpen ? 'none' : '';
+  iconClose.style.display = isOpen ? ''     : 'none';
+});
+
+window.closeMob = () => {
+  mobMenu.classList.remove('open');
+  document.body.style.overflow = '';
+  iconOpen.style.display  = '';
+  iconClose.style.display = 'none';
+};
+</script>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Credit Solutions That Put You<br>Back in <em>Control</em></h1>
+      <p>
+        Are you blacklisted, under debt review, or struggling to get approved for credit?
+        We help you become active in the credit market again — with professional,
+        ethical, and reliable credit solutions.
+      </p>
+      <div class="hero-buttons">
+        <a class="btn" href="#services">Our Services</a>
+        <a class="btn-outline1" href="#contact">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ MARQUEE ══ -->
+  <div class="marquee-strip">
+    <div class="marquee-track" id="marq"></div>
+  </div>
+
+
+  <!-- ══ ABOUT ══ -->
+  <section class="about-intro" id="about">
+    <div class="about-intro-inner">
+
+      <p class="section-subtitle">OUR STORY</p>
+      <h2>About Honey Badger Credit Solutions</h2>
+      <div class="gold-divider"></div>
+
+      <div class="about-paragraphs">
+
+        <!-- Row 1: text left, image right -->
+        <div class="about-row">
+          <div class="about-text-col">
+            <p>
+              Honey Badger Credit Solutions was founded on a simple but powerful belief — that a bad credit record should never be a permanent barrier to financial freedom. We understand how devastating it feels to be turned away for a home loan, a vehicle, or even a basic store account because of listings that may be inaccurate, outdated, or the result of circumstances beyond your control. That is why we exist: to stand in your corner, fight relentlessly on your behalf, and restore the financial opportunities that are rightfully yours.
+            </p>
+            <p>
+              Our team brings together experienced credit specialists, legal advisors, and client support professionals who are deeply familiar with South Africa's credit legislation and the processes of the major credit bureaus. We do not offer shortcuts or promises we cannot keep. Instead, we apply a thorough, methodical approach to every case — analysing your credit profile, identifying every disputable entry, and pursuing corrections and removals through the proper legal channels with persistence and precision.
+            </p>
+          </div>
+          <div class="about-img-wrap">
+            <img src="images/img1.png" alt="Credit consultant helping a client"/>
+            <div class="about-img-tag">Your Trusted Partner</div>
+          </div>
+        </div>
+
+        <!-- 3-image strip -->
+        <div class="about-img-strip">
+          <div class="about-img-strip-item">
+            <img src="images/img2.png" alt="Credit analysis"/>
+            <div class="strip-label">Credit <span>Analysis</span></div>
+          </div>
+          <div class="about-img-strip-item">
+            <img src="images/img4.png" alt="Professional advisor"/>
+            <div class="strip-label">Expert <span>Advisors</span></div>
+          </div>
+          <div class="about-img-strip-item">
+            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&q=80&auto=format&fit=crop" alt="Financial freedom"/>
+            <div class="strip-label">Financial <span>Freedom</span></div>
+          </div>
+        </div>
+
+        <!-- Row 2: image left, text right -->
+        <div class="about-row reverse">
+          <div class="about-text-col">
+            <p>
+              What sets Honey Badger Credit Solutions apart is our name — and we mean it. Like the animal we are named after, we are fearless, tenacious, and we simply do not give up. Whether you are dealing with a blacklisting, a debt review flag, fraudulent accounts, or a score that does not reflect your true financial behaviour, we dig in and get results. Every client receives a personalised strategy, regular progress updates, and the kind of dedicated support that makes a real difference in what can be a stressful and confusing process.
+            </p>
+            <p>
+              Based at Diakoni 59 Building and available via WhatsApp around the clock, we pride ourselves on being accessible, transparent, and genuinely invested in each client's outcome. We measure our success not by the number of cases we open, but by the number of lives we change — the families who qualify for their first home, the entrepreneurs who access the funding they need, and the individuals who finally feel financially free. That is the Honey Badger promise: smarter credit, and a stronger future for every single client we serve.
+            </p>
+          </div>
+          <div class="about-img-wrap">
+            <img src="images/img3.png" alt="Team at Honey Badger"/>
+            <div class="about-img-tag">Diakoni 59 Building</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ VISION MISSION GOALS ══ -->
+  <section class="vmg-section" id="vision-mission">
+    <div class="vmg-inner">
+
+      <p class="section-subtitle">WHAT DRIVES US</p>
+      <h2>Vision, Mission &amp; Goals</h2>
+      <div class="gold-divider"></div>
+
+      <div class="vmg-grid">
+
+        <div class="vmg-card">
+          <div class="vmg-icon-wrap">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="20" r="8" stroke="#c6a75c" stroke-width="2"/>
+              <circle cx="20" cy="20" r="3" fill="#c6a75c"/>
+              <line x1="20" y1="2"  x2="20" y2="10" stroke="#c6a75c" stroke-width="2" stroke-linecap="round"/>
+              <line x1="20" y1="30" x2="20" y2="38" stroke="#c6a75c" stroke-width="2" stroke-linecap="round"/>
+              <line x1="2"  y1="20" x2="10" y2="20" stroke="#c6a75c" stroke-width="2" stroke-linecap="round"/>
+              <line x1="30" y1="20" x2="38" y2="20" stroke="#c6a75c" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="vmg-label">Vision</div>
+          <h3 class="vmg-title">A South Africa Where Credit is Never a Barrier</h3>
+          <p class="vmg-text">To become a trusted leader in credit repair solutions across South Africa — empowering individuals and businesses to achieve financial freedom through restored credit, informed decisions, and lasting financial confidence.</p>
+        </div>
+
+        <div class="vmg-card vmg-card--featured">
+          <div class="vmg-icon-wrap">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="20" r="16" stroke="#c6a75c" stroke-width="2"/>
+              <circle cx="20" cy="20" r="8"  stroke="#c6a75c" stroke-width="1.5" stroke-dasharray="3 2"/>
+              <circle cx="20" cy="20" r="3"  fill="#c6a75c"/>
+              <line x1="20" y1="4" x2="20" y2="12" stroke="#c6a75c" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="vmg-label">Mission</div>
+          <h3 class="vmg-title">Rebuild, Protect &amp; Strengthen</h3>
+          <p class="vmg-text">Honey Badger Credit Solutions is committed to helping clients rebuild, protect, and strengthen their credit profiles through ethical credit repair services, personalised support, and transparent processes. We aim to deliver measurable results, educate clients, and create long-term financial opportunities that improve lives and economic stability.</p>
+        </div>
+
+        <div class="vmg-card">
+          <div class="vmg-icon-wrap">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polyline points="6,34 6,20 14,20 14,34"  stroke="#c6a75c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <polyline points="16,34 16,14 24,14 24,34" stroke="#c6a75c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <polyline points="26,34 26,8  34,8  34,34" stroke="#c6a75c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="4" y1="34" x2="36" y2="34" stroke="#c6a75c" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="vmg-label">Our Goals</div>
+          <h3 class="vmg-title">Growing Without Compromising</h3>
+          <ul class="vmg-goals-list">
+            <li><span class="g-dot"></span> Help every client become active in the credit market again</li>
+            <li><span class="g-dot"></span> Maintain 100% ethical and transparent credit repair practices</li>
+            <li><span class="g-dot"></span> Expand our reach to serve clients across all provinces</li>
+            <li><span class="g-dot"></span> Educate clients so they maintain healthy credit long-term</li>
+            <li><span class="g-dot"></span> Turn every declined application into a new opportunity</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ SERVICES ══ -->
+  <section id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-subtitle">WHAT WE OFFER</p>
+        <h2>Our <span class="gold-text">Services</span></h2>
+        <p class="section-lead">Every service is designed around your unique situation with a personalised plan and transparent process.</p>
+      </div>
+      <div class="s-grid">
+        <div class="scard reveal">
+          <div class="s-num">01</div>
+          <div class="s-icon"><i class='bx bx-block'></i></div>
+          <div class="s-title">Blacklist Assistance</div>
+          <p class="s-desc">We help you understand why you're blacklisted and take decisive steps to have adverse listings removed from your credit profile.</p>
+        </div>
+        <div class="scard reveal" style="transition-delay:.1s">
+          <div class="s-num">02</div>
+          <div class="s-icon"><i class='bx bx-rotate-left'></i></div>
+          <div class="s-title">Debt Review Removal</div>
+          <p class="s-desc">Struggling to exit debt review? We guide you through the legal process to have the flag removed so you can access credit again.</p>
+        </div>
+        <div class="scard reveal" style="transition-delay:.2s">
+          <div class="s-num">03</div>
+          <div class="s-icon"><i class='bx bx-user-check'></i></div>
+          <div class="s-title">Credit Profile Rehabilitation</div>
+          <p class="s-desc">Full profile rehabilitation — from disputing incorrect data to rebuilding your payment history and improving your overall credit score.</p>
+        </div>
+        <div class="scard reveal" style="transition-delay:.05s">
+          <div class="s-num">04</div>
+          <div class="s-icon"><i class='bx bx-shield-alt-2'></i></div>
+          <div class="s-title">Admin &amp; Fraud Assistance</div>
+          <p class="s-desc">Dealing with administrative errors or fraudulent accounts? We handle disputes and corrections on your behalf.</p>
+        </div>
+        <div class="scard reveal" style="transition-delay:.15s">
+          <div class="s-num">05</div>
+          <div class="s-icon"><i class='bx bx-trending-up'></i></div>
+          <div class="s-title">Credit Score Improvement</div>
+          <p class="s-desc">Strategic, step-by-step plans to raise your credit score — making you eligible for better loans and lower interest rates.</p>
+        </div>
+        <div class="scard reveal" style="transition-delay:.25s">
+          <div class="s-num">06</div>
+          <div class="s-icon"><i class='bx bx-book-content'></i></div>
+          <div class="s-title">Credit Education &amp; Support</div>
+          <p class="s-desc">Ongoing coaching, education, and monitoring — empowering you to maintain a healthy profile long after our work is done.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ TAGLINE BANNER ══ -->
+  <div class="tagline-banner">
+    <div class="tb-main">We Turn <span class="gold-text">Declined Applications</span><br>Into New Opportunities</div>
+    <div class="tb-sub">Don't let a bad credit score define your future — let us fight for you.</div>
+    <div class="tb-actions">
+      <a href="https://wa.me/27658316290" target="_blank" class="btn-wa"><i class='bx bxl-whatsapp'></i> WhatsApp Us Now</a>
+      <a href="tel:0312706423" class="btn-call"><i class='bx bx-phone-call'></i> 031 270 6423</a>
+    </div>
+  </div>
+
+
+  <!-- ══ WHY US ══ -->
+  <section id="why">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-subtitle">WHY CHOOSE US</p>
+        <h2>The Honey Badger <span class="gold-text">Difference</span></h2>
+        <p class="section-lead">Relentless, ethical, and results-driven — here's what sets us apart.</p>
+      </div>
+      <div class="w-grid">
+        <div class="wcard reveal"><i class='bx bx-medal'></i><div class="w-title">Relentlessly Persistent</div><p class="w-desc">Like our namesake, we never give up. We pursue every legal avenue until your credit profile is restored.</p></div>
+        <div class="wcard reveal" style="transition-delay:.1s"><i class='bx bx-leaf'></i><div class="w-title">100% Ethical Practices</div><p class="w-desc">No shortcuts. No false promises. Only legitimate, lawful credit repair that stands the test of time.</p></div>
+        <div class="wcard reveal" style="transition-delay:.2s"><i class='bx bx-search-alt'></i><div class="w-title">Full Transparency</div><p class="w-desc">You'll know exactly what we're doing, why, and what results you can expect — every step of the way.</p></div>
+        <div class="wcard reveal"><i class='bx bx-group'></i><div class="w-title">Personalised Support</div><p class="w-desc">Every client is unique. We build tailored strategies around your specific financial situation and goals.</p></div>
+        <div class="wcard reveal" style="transition-delay:.1s"><i class='bx bx-line-chart'></i><div class="w-title">Measurable Results</div><p class="w-desc">Real, verifiable improvements tracked and reported — you'll see your credit score progress in black and white.</p></div>
+        <div class="wcard reveal" style="transition-delay:.2s"><i class='bx bx-world'></i><div class="w-title">Long-Term Impact</div><p class="w-desc">We create lasting financial stability — not just a quick fix, but a permanent improvement to your economic future.</p></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ PROCESS ══ -->
+  <section id="process">
+    <div class="container">
+      <div class="section-header reveal center">
+        <p class="section-subtitle">HOW IT WORKS</p>
+        <h2>Your Path to <span class="gold-text">Better Credit</span></h2>
+        <p class="section-lead center-text">Simple, clear steps — so you always know where you stand.</p>
+      </div>
+      <div class="p-steps">
+        <div class="pstep reveal">
+          <div class="pstep-c"><i class='bx bx-message-square-dots'></i></div>
+          <div class="pstep-title">Free Consultation</div>
+          <p class="pstep-desc">Call or WhatsApp us. We listen, assess your situation, and explain exactly how we can help.</p>
+        </div>
+        <div class="pstep reveal" style="transition-delay:.1s">
+          <div class="pstep-c"><i class='bx bx-analyse'></i></div>
+          <div class="pstep-title">Credit Analysis</div>
+          <p class="pstep-desc">We pull and review your full credit report to identify every issue, error, and opportunity.</p>
+        </div>
+        <div class="pstep reveal" style="transition-delay:.2s">
+          <div class="pstep-c"><i class='bx bx-notepad'></i></div>
+          <div class="pstep-title">Custom Strategy</div>
+          <p class="pstep-desc">A tailored action plan with clear milestones, timelines, and transparent communication.</p>
+        </div>
+        <div class="pstep reveal" style="transition-delay:.3s">
+          <div class="pstep-c"><i class='bx bx-trophy'></i></div>
+          <div class="pstep-title">Results &amp; Growth</div>
+          <p class="pstep-desc">We execute, track your progress, and keep improving your profile for long-term success.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ CONTACT ══ -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-subtitle">GET IN TOUCH</p>
+        <h2>Start Your <span class="gold-text">Recovery Today</span></h2>
+        <p class="section-lead">Ready to take control? Reach out — your first consultation is free.</p>
+      </div>
+      <div class="c-grid">
+        <div class="reveal" style="transition-delay:.1s">
+          <div class="c-channels">
+            <a class="ch" href="tel:0312706423">
+              <div class="ch-ico navy"><i class='bx bx-phone-call'></i></div>
+              <div><div class="ch-type">Call Us</div><div class="ch-val">031 270 6423</div><div class="ch-note">Mon – Fri, Business Hours</div></div>
+            </a>
+            <a class="ch" href="https://wa.me/27658316290" target="_blank" rel="noopener">
+              <div class="ch-ico green"><i class='bx bxl-whatsapp'></i></div>
+              <div><div class="ch-type">WhatsApp</div><div class="ch-val">065 831 6290</div><div class="ch-note">Message us anytime — fast response</div></div>
+            </a>
+            <div class="ch">
+              <div class="ch-ico gold"><i class='bx bx-map'></i></div>
+              <div><div class="ch-type">Visit Us</div><div class="ch-val">Diakoni 59 Building</div><div class="ch-note">Your partner in financial recovery</div></div>
+            </div>
+          </div>
+          <div class="promise-box">
+            <div class="pb-label"><i class='bx bx-shield-check'></i> Our Promise</div>
+            <p class="pb-text">No obligation on your first consultation. Transparent pricing before we start. Honest communication and measurable results throughout your journey.</p>
+          </div>
+        </div>
+        <div class="reveal" style="transition-delay:.2s">
+          <form class="c-form" id="cForm">
+            <div class="frow">
+              <div class="fg"><label>First Name</label><input type="text" placeholder="..." required/></div>
+              <div class="fg"><label>Last Name</label><input type="text" placeholder="..." required/></div>
+            </div>
+            <div class="fg"><label>Phone Number</label><input type="tel" placeholder="..." required/></div>
+            <div class="fg"><label>Email (optional)</label><input type="email" placeholder="..."/></div>
+            <div class="fg">
+              <label>Service Needed</label>
+              <select>
+                <option value="">Select a service...</option>
+                <option>Blacklist Assistance</option>
+                <option>Debt Review Removal</option>
+                <option>Credit Profile Rehabilitation</option>
+                <option>Admin &amp; Fraud Assistance</option>
+                <option>Credit Score Improvement</option>
+                <option>Credit Education &amp; Support</option>
+                <option>Not sure — need advice</option>
+              </select>
+            </div>
+            <div class="fg"><label>Tell Us Your Situation</label><textarea placeholder="Briefly describe what's affecting your credit and what you'd like to achieve..."></textarea></div>
+            <div class="form-foot">
+              <button type="submit" class="btn-submit"><i class='bx bx-send'></i> Send Message</button>
+              <span class="fnote">We'll respond within 24 hours</span>
+            </div>
+            <div class="fsuccess" id="fsucc"><i class='bx bx-check-circle'></i> Thank you! We'll be in touch shortly.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="foot-top">
+      <div class="ft-brand">
+        <div class="ft-brand-logo">
+          <!-- Replace images/logo.png with your actual logo file path -->
+          <img src="images/honey-logo1.png" alt="Honey Badger Credit Solutions Logo" class="footer-logo-img"/>
+          <div>
+            <div class="ft-name">Honey Badger</div>
+            <div class="ft-sub">Credit Solutions</div>
+          </div>
+        </div>
+        <p class="ft-desc">Helping South Africans rebuild, protect, and strengthen their credit profiles through ethical and transparent credit repair services.</p>
+        <p class="ft-tagline">Smarter Credit. Stronger Future.</p>
+      </div>
+      <div>
+        <div class="ft-heading">Quick Links</div>
+        <div class="ft-links">
+          <a href="#about">About Us</a>
+          <a href="#services">Our Services</a>
+          <a href="#why">Why Honey Badger</a>
+          <a href="#process">How It Works</a>
+          <a href="#contact">Contact Us</a>
+        </div>
+      </div>
+      <div>
+        <div class="ft-heading">Contact</div>
+        <div class="ft-contact-item"><i class='bx bx-map'></i><span>Diakoni 59 Building</span></div>
+        <div class="ft-contact-item"><i class='bx bx-phone-call'></i><a href="tel:0312706423">031 270 6423</a></div>
+        <div class="ft-contact-item"><i class='bx bxl-whatsapp'></i><a href="https://wa.me/27658316290" target="_blank">065 831 6290</a></div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="foot-copy">© <span id="year"></span> Honey Badger Credit Solutions. All rights reserved.| Designed by ZH Madlala</div>
+      <div class="foot-partner"><i class='bx bx-heart'></i> Your partner in financial recovery.</div>
+    </div>
+  </footer>
+
+  <button id="scrollTop" title="Back to top">
+  <i class='bx bx-chevron-up'></i>
+  </button>
+
+  <script src="JS/main.js"></script>
+</body>
+</html>
